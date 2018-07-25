@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Exercise</title>
+  <script>
+    var matriz = [
+  ["brr", "fiu", "cric-cric", "brrah"],
+  ["pep","birip","trri-trri","croac"],
+  ["bri-bri","plop","cric-cric","brrah"]
+             ];
+var text;
+var content=[];
+var a,b;
+
+function doSomething(evt){
+  text = evt.value;
+var output = document.querySelector('#textValue');
+  for(var i=0;i<matriz.length;i++){
+ for(var j=0;j<matriz.length+1;j++){
+   
+   if(matriz[i][j]===text){   
+    // isTrue(i,j);
+     a=i;
+     b=j;
+     for(var i=b+1;i<matriz.length+1;i++){
+     content.push(matriz[a][i]);
+  }
+     output.innerHTML = content;
+     content=[];
+      }
+ }}}
+  </script>
+</head>
+<body>
+  <h1>Song Play</h1>
+  <h3>This is the song:</h3>
+  <p>brr, fiu, cric-cric, brrah</p>
+<p>pep, birip, trri-trri, croac</p>
+<p>bri-bri, plop, cric-cric, brrah</p>
+  <br>
+  <label>
+  Type any sound you see before: 
+  <input type="text" oninput = "doSomething(this)">
+</label>
+  <p>
+  <span id="textValue"></span>
+</p>  
+</body>
+</html>
